@@ -61,9 +61,11 @@ function ExpenseForm(props) {
     props.onSaveExpenseData(expenseData);
 
     // 입력 폼 초기화
-    setEnteredTitle('');
-    setEnteredAmount('');
-    setEnteredDate('');
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
+
+    props.onStopEditing();
   };
 
   return (
@@ -101,6 +103,7 @@ function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button onClick={props.onStopEditing}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
