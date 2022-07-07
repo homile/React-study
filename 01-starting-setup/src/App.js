@@ -32,9 +32,7 @@ function App() {
   const [expenses, setExpenses] = useState(expensesData);
 
   const addExpenseHandler = (data) => {
-    console.log('app');
     setExpenses([...expenses, data])
-    console.log(expenses);
   };
 
   return (
