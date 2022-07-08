@@ -5,6 +5,7 @@ import Card from "../UI/Card";
 import "./Expenses.css";
 import ExpenseFilter from "./ExpenseFilter";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 
 function Exoenses(props) {
   const [filteredYear, setFilteredYear] = useState("2020");
@@ -25,6 +26,7 @@ function Exoenses(props) {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
+        <ExpensesChart expenses={filterExpenses}/>
         {/* key: 어느 컴포넌트에도 추가 할 수 있다. 
           컴포넌트를 맵핑할 때는 key를 지정해주어여 한다.
           리액트가 개별의 컴포넌트로 인식하게 해주는 고유 식별 값이다.
