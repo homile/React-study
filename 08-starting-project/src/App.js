@@ -15,10 +15,11 @@ function App() {
   };
 
   return (
-    <div>
+    // fragment 문법 <React.Fragment></React.Fragment>
+    <> 
       <AddUser onAddUser={addUserHandler} />
       <UsersList users={usersList} />
-    </div>
+    </>
   );
 }
 
