@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { useMediaQuery } from "react-responsive";
+import styled, { ThemeProvider } from "styled-components";
+import Nav from "./nav/Nav";
+import { GlobalStyle } from "./styles/GlobalStyle";
+import { darkTheme, lightTheme } from "./styles/Theme";
 
-function App() {
+const App = () => {
+  // 태블릿 사이즈일 때, 모바일 사이즈 화면 출력
+  const isMobile = useMediaQuery({ maxWidth: 786 });
+
+  // 테마 변경 (lightTheme, darkTheme)
+  const [isTheme, setIsTheme] = useState("lightTheme");
+  const theme = isTheme === "lightTheme" ? lightTheme : darkTheme;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ThemeProvider theme={theme}>
+        <AppContainer>
+          <GlobalStyle />
+          <Nav isTheme={isTheme} setIsTheme={setIsTheme} />
+          {isMobile ? "모바일" : "데스크탑"}
+        </AppContainer>
+      </ThemeProvider>
+    </>
   );
-}
+};
 
 export default App;
+
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: ${props => props.theme.colors.textColor};
+`;
