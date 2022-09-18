@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
+import Footer from "./footer/Footer";
 import Nav from "./nav/Nav";
 import { GlobalStyle } from "./styles/GlobalStyle";
 import { darkTheme, lightTheme } from "./styles/Theme";
@@ -23,6 +24,8 @@ const App = () => {
         <AppContainer>
           <GlobalStyle />
           <Nav isTheme={isTheme} setIsTheme={setIsTheme} />
+          <span>dsadsadsa</span>
+          <Footer/>
         </AppContainer>
       </ThemeProvider>
     </>

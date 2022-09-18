@@ -1,6 +1,7 @@
 import React  from "react";
 import styled from "styled-components";
 import logo from "../img/ANBD-2.png";
+import logoW from "../img/ANBD-2-w.png";
 import { ReactComponent as Sun } from "../img/sun.svg";
 import { ReactComponent as Moon } from "../img/moon.svg";
 import { useMediaQuery } from "react-responsive";
@@ -22,7 +23,7 @@ const Nav = ({ isTheme, setIsTheme }) => {
     <NavContainer>
       <NavContent>
         <NavLight>
-          <img src={logo} alt="ANBD Logo" />
+          <img src={isTheme === "light" ? logo : logoW} alt="ANBD Logo" />
           {!isMobile && (
             <>
               <div>공유장터</div>
@@ -79,6 +80,7 @@ const NavContent = styled.div`
   img {
     margin-right: 2rem;
     padding: 0.5rem;
+    width: 180px;
     cursor: pointer;
   }
 `;

@@ -12,7 +12,6 @@ const colors = {
 
 export const lightTheme = {
   colors: {
-    // 변하는 부분
     primary: "#62BF53",
     bgColor: "#FFFFFF",
     textColor: "#000000",
@@ -20,14 +19,13 @@ export const lightTheme = {
     black: "#000000",
     white: "#FFFFFF",
     placholder: "#828282",
-
-    // 변하지 않는 부분
-    ...colors,
+    ...colors
   },
 };
 
 export const darkTheme = {
   colors: {
+    // 변하는 부분
     primary: "#62BF53",
     bgColor: "#2F2F2F",
     textColor: "#FFFFFF",
@@ -35,8 +33,8 @@ export const darkTheme = {
     black: "#000000",
     white: "#FFFFFF",
     placholder: "#ffffff",
-
-    ...colors,
+    // 변하지 않는 부분
+    ...colors
   },
 };
 
