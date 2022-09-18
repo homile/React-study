@@ -1,12 +1,22 @@
-import React from "react";
+import React  from "react";
 import styled from "styled-components";
 import logo from "../img/ANBD-2.png";
 import { ReactComponent as Sun } from "../img/sun.svg";
 import { ReactComponent as Moon } from "../img/moon.svg";
 import { useMediaQuery } from "react-responsive";
 
-const Nav = ({isTheme, setIsTheme}) => {
+const Nav = ({ isTheme, setIsTheme }) => {
   const isMobile = useMediaQuery({ maxWidth: 786 });
+
+  const toggleTheme = () => {
+    if (isTheme === "light") {
+      setIsTheme("dark");
+      localStorage.setItem("theme", "dark")
+    } else {
+      setIsTheme("light");
+      localStorage.setItem("theme", "light")
+    }
+  };
 
   return (
     <NavContainer>
@@ -21,17 +31,17 @@ const Nav = ({isTheme, setIsTheme}) => {
           )}
         </NavLight>
         <NavLeft>
-          {isTheme === "lightTheme" ? (
+          {isTheme === "light" ? (
             <Sun
               witdth="2.5rem"
               height="2.5rem"
-              onClick={() => setIsTheme("darkTheme")}
+              onClick={toggleTheme}
             ></Sun>
           ) : (
             <Moon
               witdth="2.5rem"
               height="2.5rem"
-              onClick={() => setIsTheme("lightTheme")}
+              onClick={toggleTheme}
             ></Moon>
           )}
           {!isMobile ? (
