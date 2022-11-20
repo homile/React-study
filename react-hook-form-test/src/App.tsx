@@ -1,10 +1,10 @@
 import React from 'react';
+import Signup from './pages/signup';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <Signup></Signup>
     </div>
   );
 }
