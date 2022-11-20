@@ -1,0 +1,45 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#signup {
+  display: flex;
+  flex-direction: column;
+}
+
+label{
+  margin: 5px 0;
+}
+
+input{
+  width: 300px;
+  height: 2.5rem;
+  font-size: 1rem;
+  text-indent: 0.8rem;
+}
+
+span{
+  font-size: 0.8rem;
+  color: #ff5d5a;
+}
+
+button {
+  border: 0px;
+  border-radius: 4px;
+  background-color: #1875d2;
+  color: white;
+  font-size: 1rem;
+  width: 304px;
+  height: 2rem;
+  cursor: pointer;
+  margin: 8px 0;
+}
+
+button:hover {
+  opacity: 90%;
+}

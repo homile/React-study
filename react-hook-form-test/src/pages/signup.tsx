@@ -21,7 +21,10 @@ const schema = yup.object().shape({
     )
     .required("아이디는 필수입력 사항입니다."),
   // 이메일 유효성 검사 코드
-  email: yup.string().email().required("이메일을 입력해주세요."),
+  email: yup
+    .string()
+    .email("이메일 형식을 맞춰주세요.")
+    .required("이메일을 입력해주세요."),
   password: yup
     .string()
     .min(8, "비밀번호는 8글자 이상입니다..")
@@ -50,7 +53,7 @@ const Signup = () => {
 
   return (
     // handleSubmit은 onSubmit을 호출하기 전에 입력의 유효성을 검사한다.
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form id="signup" onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="userId">아이디</label>
       <input
         id="userId"
